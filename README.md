@@ -43,8 +43,8 @@ Things you may want to cover:
 |family_name|string|null: false|
 |fast_name_kana|string|null: false|
 |family_name_kana|string|null: false|
-|birthday|data|null: false|
-|introduction|string|null: false|
+|birthday|data||
+|introduction|string||
 |user_id|references|null: false, unique: true, index: true|
 ### Association
 - belongs_to :user
@@ -60,7 +60,7 @@ Things you may want to cover:
 |post_code|integer|null: false|
 |prefecture_code|integer|null: false|
 |city|string|null: false|
-|house_number|integer|null: false|
+|address_line|integer|null: false|
 |building_name|string||
 |phone_number|integer|null: false|
 |user_id|references|null: false, unique: true, index: true|
