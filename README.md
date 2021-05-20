@@ -69,7 +69,7 @@ Things you may want to cover:
 - belongs_to_active_hash:prefecture_code
 
 
-## credit_cardテーブル
+## creditcardテーブル
 |Column|Type|Options|
 |------|----|-------|
 |customer_id|string|null: false|
