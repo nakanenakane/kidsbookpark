@@ -57,4 +57,14 @@ gem 'pry-rails'
 
 gem 'devise'
 
-gem 'haml-rails'
+gem "haml-rails", ">= 1.0", '<= 2.0.1'
+
+gem 'active_hash'
+
+gem 'ancestry'
+
+gem 'font-awesome-sass'
+
+gem 'jquery-rails'
+
+gem 'rails-i18n'
