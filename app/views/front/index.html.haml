@@ -28,20 +28,27 @@
       .main__content__title
         お家で不要になった絵本ございませんか？
       .main__content__sub
-        KidsBookParkは どなたでも 簡単に 出品・購入できる
-        %div 絵本のフリマアプリです
+        KidsBookParkは どなたでも 簡単に 出品・購入できる絵本のフリマアプリです
+      .main__content__descripts
+        .main__content__descripts__introduction
+          .main__content__icon
+            = image_tag ("introduction_icon.png"), class:"introduction-icon"
+          .main__content__descripts__introduction__title
+            こ ん な 方 に オ ス ス メ
+          .main__content__icon
+            = image_tag ("introduction_icon.png"), class:"introduction-icon"
+        .main__content__descripts__list
+          ◯
+          %div◯
+          %div◯
+          %div◯
   .introduction
     .introduction__title
-      FURIMAが選ばれる3つの理由
     .introduction__lists 
       .introduction__lists__list
 .banner
   .banner__box
     .banner__box__title
-      だれでもかんたん、人生を変えるフリマアプリ
     .banner__box__text
-      今すぐ無料ダウンロード！
     .banner__content__btn
-      = #link_to (image_tag ("app-store-logo.png"), class:"content-btn"), "#" 
-      = #link_to (image_tag ("google-player.png") ,class: "content-btn"), "#"
 .footer
