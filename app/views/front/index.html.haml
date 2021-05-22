@@ -1,25 +1,31 @@
 .header
-  .header__inner
-    .header__main
-      .header__icon
-        = link_to "/"
-      .header__searchbox
-        = form_with(local: true) do |form|
-          = form.text_field :name, placeholder: "キーワードから探す", class:"header__searchbox--input"
-          .header__searchbox--icon
-            = button_tag type: :submit
-    .header__nav
-      .header__listsLeft
-      .header__listsRight
+  .header__main
+    .header__main__icon
+      = link_to "/"
+    .header__main__title
+      絵本のフリマサイト KidsBookPark[キッズブックパーク]
+    .header__main__nav
+      .header__main__nav__list
         -if user_signed_in?
-          %li.header__listsRight--item.header__listsRight--item--login
-            =link_to "マイページ", mypages_path(current_user)
-          %li.header__listsRight--item.header__listsRight--item--new
+          =link_to mypages_path(current_user) do
+            .header__main__nav__list--mypage
+              マイページ
         -else
-          %li.header__listsRight--item.header__listsRight--item--login
-            =link_to "ログイン", new_user_session_path(current_user)
-          %li.header__listsRight--item.header__listsRight--item--new
-            =link_to "新規会員登録", new_user_registration_path(current_user)
+          =link_to new_user_session_path(current_user), class: "header__main__nav__list--login" do
+            .header__main__nav__list--login
+              ログイン
+          =link_to new_user_registration_path(current_user) do
+            .header__main__nav__list--new
+              新規会員登録
+            
+  .header__search
+    .header__searchbox
+      = form_with(local: true) do |form|
+        = form.text_field :name, placeholder: "キーワードから探す", class:"header__searchbox--input"
+        .header__searchbox--icon
+          = button_tag type: :submit
+    .header__nav
+
 .body
   = link_to "#" do
     = render 'sellbook-icon'
