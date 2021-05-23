@@ -6,7 +6,6 @@
 .header{
   height: 120px;
   width: 100vw;
-  //background-color: #e5f2ff;
   background-color: #ffff;
   border-bottom: 1px solid;
   border-color: rgb(180, 176, 176);
@@ -17,9 +16,6 @@
     align-items: center;
     height: 60%;
     width: 100%;
-    &__icon{
-
-    }
     &__title{
       width: 30%;
       margin-left: 5%;
@@ -40,13 +36,24 @@
         justify-content: space-between;
         align-items: center;
         padding-left: 20px;
+          &--mypage{
+            height: 32px;
+            width: 100px;
+            text-align: center;
+            font-size: 14px;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background: #fa4141;
+            color: #fff;
+            padding: 5px 8px;
+        }
         &--login{
           width: 58px;
           margin-right: 20px;
           font-size: 14px;
           color: black;
         }
-        &--new{
+        &--new,&--mypage{
           height: 32px;
           width: 100px;
           text-align: center;
@@ -65,32 +72,56 @@
   }
   &__search{
     display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 40%;
     width: 100%;
     background-color: #e5f2ff;
-    &__searchbox{
-      margin-left: auto;
-      width: 100%;
-      &--input{
-        width: calc(100% - 26px);
-        height: 36px;
-        padding: 0 0 0 5px;
+    &__nav{
+      display: flex;
+      justify-content: center;
+      height: 90%;
+      width: 20%;
+      margin-left: 13%;
+      font-size: 17px;
+      text-align: center;
+      &--category{
+        width: 90px;
+        margin-left: 5%;
+        padding-top: 4%;
       }
-      & form{
+      &--publisher{
+        width: 90px;
+        margin-left: 10%;
+        padding-top: 4%;
+      }
+    }
+    &__searchbox{
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      width: 70%;
+      margin-right: 43px;
+      padding-top: 0.4%;
+      form{
         display: flex;
       }
-      &--icon img{
-        height: 25px;
+      input[type="text"] {
+        height: 80%;
+        width: 555px;
+        padding-left: 10px;
+      }
+      &__icon img{
+        display: inline-block;
+        height: 63%;
         border: 0;
         cursor: pointer;
         background-color: #3CCACE;
-        background-image: "icon-search 1.png";
         padding: 8px;
         border-style: none;
       }
-      &--icon button{
-        height: 40px;
+      &__icon button{
+        height: 42px;
         border: none;
       }
     }
