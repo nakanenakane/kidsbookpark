@@ -87,6 +87,7 @@ Things you may want to cover:
 |price|integer|null: false|
 |category|string|null: false|
 |publisher_code|integer|null: false|
+|author|string|null:false|
 |item_condition|integer|null: false|
 |postage_payer|integer|null: false|
 |preparation_day|integer|null: false|
