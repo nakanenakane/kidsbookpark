@@ -6,6 +6,7 @@ class CreateBooks < ActiveRecord::Migration[6.0]
       t.text :introduction,     null: false
       t.integer :category_id,   null: false, foreign_key: true
       t.integer :publisher_id, null: false
+      t.string :author,         null: false
       t.integer :condition_id,   null: false
       t.integer :preparation_day_id, null: false
       t.integer :postage_payer_id, null: false
