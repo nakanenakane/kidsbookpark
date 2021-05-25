@@ -1,0 +1,131 @@
+.sign-content{
+  background-color:#f5f5f5;
+  text-align: center;
+  color: black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.registrations-new{
+  width: 600px;
+  height: auto;
+  background-color: white;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  &__wrapper{
+    &__form__set{
+      &__information{
+        margin-bottom: 27px;
+        margin: 10px 0 27px 0;
+        display: block;
+        height: 50px; 
+      }
+      &__passwordconfirmation{
+        margin-top: 50px;
+      }
+      &__password__desc{
+        font-size: 12px;
+      }
+    }
+    &__nav{
+      font-size: 18px;
+      text-align: center;
+      padding: 16px;
+      font-weight: bold;
+      border-bottom: solid 1px;
+      border-color: whitesmoke;
+    }
+  }
+}
+
+.form-require{
+  background-color: red;
+  margin-left: 20px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: white;
+  font-size: 12px;
+  width: 32px;
+  height: 19px;
+}
+
+.profile-group{
+  margin-bottom: 27px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  height: 50px;
+  &__require{
+    background-color: red;
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: white;
+    font-size: 12px;
+    width: 40px;
+    height: 19px;
+    margin: 15px;
+  }
+  &__name-holder{
+    display: flex;
+    justify-content: center;
+  }
+}
+.profile-btn{
+
+  cursor: pointer;
+  color: white;
+  margin-top: 50px;
+  width: 250px;
+  height: 50px;
+  border: 1px solid #949494;
+}
+.profile-btn:hover {
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
+}
+
+.profile-group__sub{
+  color: #818181;
+  font-size: 13px;
+}
+
+.profile-desc-safety{
+  color: black;
+  font-size: 14px;
+  margin-bottom: 10px;
+  h2{
+    margin-top: 20px;
+    margin-bottom: -16px;
+    font-weight: bold;
+  }
+}
+
+#user_nickname,#user_email,
+#user_password,#user_password_confirmation{
+  width: 270px;
+  height: 40px;
+  font-size: 14px;
+}
+
+#user_family_name,#user_first_name,
+#user_family_name_kana,#user_first_name_kana{
+  width: 135px;
+  height: 40px;
+  font-size: 14px;
+}
+
+#user_birth_date_1i,#user_birth_date_2i,
+#user_birth_date_3i{
+  width: 90px;
+  height: 40px;
+  font-size: 14px;
+}
+
+#error_explanation{
+  font-size: 13px;
+  color: red;
+}

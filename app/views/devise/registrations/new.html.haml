@@ -1,21 +1,62 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.sign-content
+  .registrations-new
+    .registrations-new__wrapper
+      .registrations-new__wrapper__nav
+        会員情報入力
+      .registrations-new__wrapper__form
+        .registrations-new__wrapper__form__set
+          = form_with model: @user, url: user_registration_path, local: true do |f|
+            = render "devise/shared/error_messages", resource: @user
+            .registrations-new__wrapper__form__set__information
+              ニックネーム
+              %span.form-require 必須
+              %br/
+              = f.text_field :nickname, placeholder: ' 例）絵本太郎'
+            .registrations-new__wrapper__form__set__information
+              メールアドレス
+              %span.form-require 必須
+              %br/
+              = f.text_field :email, placeholder: ' PC・携帯どちらでも可'
+            .registrations-new__wrapper__form__set__information
+              パスワード
+              %span.form-require 必須
+              %br/
+              = f.password_field :password, placeholder: ' 7文字以上の半角英数字' 
+              .registrations-new__wrapper__form__set__password__desc
+                ※ 英字と数字の両方を含めて設定してください
+            .registrations-new__wrapper__form__set__passwordconfirmation
+              確認用パスワード
+              %span.form-require 必須
+              %br/
+              = f.password_field :password_confirmation, placeholder: ' パスワードをもう一度入力してください'
+            .profile-desc-safety
+              %h2 本人確認
+              <br>
+              安心・安全にご利用いただくために、お客様の本人情報の登録にご協力ください。
+              <br>
+              他のお客様には公開されることはありません。 
+            .profile-group
+              お名前(全角)
+              %span.profile-group__require 必須
+              %br/
+              .profile-group__name-holder
+                = f.text_field :family_name, placeholder:" 例) 絵本"
+                = f.text_field :first_name, placeholder:" 例) 太郎"
+            .profile-group
+              お名前カナ(全角)
+              %span.profile-group__require 必須
+              %br/
+              .profile-group__name-holder
+                = f.text_field :family_name_kana, placeholder:" 例) エホン"
+                = f.text_field :first_name_kana, placeholder:" 例) タロウ"
+            .profile-group
+              生年月日
+              %span.profile-group__require 必須
+              %br
+              = f.date_select :birth_date, { use_month_numbers:true, prompt:"--", end_year:1900 }
+            .profile-group__sub
+              ※本人情報は正しく入力してください。
+              %br
+              会員登録後、修正するにはお時間をいただく場合があります。
+            .profile-group
+              = f.submit '送付先の入力画面へ', class: "profile-btn"
