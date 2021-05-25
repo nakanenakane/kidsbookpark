@@ -9,3 +9,37 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = yield
+  .footer
+    %ul.footer__contents
+      %li.footer__content
+        %h2.footer__content--head KidsBookParkについて
+        %ul
+          %li
+            %a{:href => "/"} 会社概要（運営会社）
+          %li
+            %a{:href => "/"} プライバシーポリシー
+          %li
+            %a{:href => "/"} KidsBookPark利用規約
+          %li
+            %a{:href => "/"} ポイントに関する特約
+      %li.footer__content
+        %h2.footer__content--head KidsBookParkを見る
+        %ul
+          %li
+            %a{:href => "/"} カテゴリー一覧
+          %li
+            %a{:href => "/"} ブランド一覧
+      %li.footer__content
+        %h2.footer__content--head ヘルプ＆ガイド
+        %ul
+          %li
+            %a{:href => "/"} KidsBookParkガイド
+          %li
+            %a{:href => "/"} KidsBookParkロゴ利用ガイドライン
+          %li
+            %a{:href => "/"} お知らせ
+    .footer__logo
+      = link_to "/" do
+        .footer__logo__image
+          = image_tag "kbp_logo.png"
+    %p © KidsBookPark
