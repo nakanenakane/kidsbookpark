@@ -1,0 +1,24 @@
+#address_address_family_name,#address_address_first_name,
+#address_address_family_name_kana,#address_address_first_name_kana{
+  width: 135px;
+  height: 40px;
+  font-size: 14px;
+}
+
+#address_post_code,#address_prefecture_id,#address_city,
+#address,#address_address_line,#address_building_name,#address_phone{
+  width: 270px;
+  height: 40px;
+  font-size: 14px;
+}
+
+.form-optional{
+  background-color:#3ccace;
+  margin-left: 20px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: white;
+  font-size: 12px;
+  width: 32px;
+  height: 19px;
+}
