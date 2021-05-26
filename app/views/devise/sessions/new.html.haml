@@ -18,5 +18,5 @@
           = f.password_field :password, autocomplete: "current-password", placeholder: 'パスワード', class: "pass-box"
         - if devise_mapping.rememberable?
           .sessions-new__wrapper__form 
-        .actions--red
+        .login
           = f.submit "ログイン", class:"login-btn"

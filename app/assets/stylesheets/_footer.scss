@@ -1,8 +1,10 @@
 .footer{
   padding: 60px 0;
   color: black;
-  background-color: #e5f2ff;
   text-align: center;
+  border-top: 1.5px solid;
+  border-color: #dedede;
+  background-color: #e5f2ff;
   &__contents{
     max-width: 840px;
     margin: 0 auto;
