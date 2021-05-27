@@ -30,7 +30,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  private
+private
 
   def address_params
     params.require(:address).permit(:address_family_name, :address_first_name, :address_family_name_kana, :address_first_name_kana, :prefecture_id, :post_code, :city, :address_line, :building_name, :phone).merge(user_id: session[:user_id])
