@@ -21,16 +21,21 @@
   &__wrapper{
     &__form__set{
       &__information{
-        margin-bottom: 27px;
         margin: 10px 0 27px 0;
+        display: block;
+        height: 50px; 
+      }
+      &__email{
+        margin: 50px 0 27px 0;
         display: block;
         height: 50px; 
       }
       &__passwordconfirmation{
         margin-top: 50px;
       }
-      &__password__desc{
+      &__attention{
         font-size: 12px;
+        margin-bottom: 2%;
       }
     }
     &__nav{
@@ -126,8 +131,8 @@
   margin-right: 10px;
 }
 
-#user_birth_date_1i,#user_birth_date_2i,
-#user_birth_date_3i{
+#user_birthday_1i,#user_birthday_2i,
+#user_birthday_3i{
   height: 40px;
   width: 90px;
   font-size: 14px;
