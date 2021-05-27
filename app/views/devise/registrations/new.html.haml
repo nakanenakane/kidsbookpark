@@ -12,7 +12,9 @@
               %span.form-require 必須
               %br/
               = f.text_field :nickname, placeholder: ' 例）絵本太郎'
-            .registrations-new__wrapper__form__set__information
+              .registrations-new__wrapper__form__set__attention
+                ※ 20字以内で設定してください
+            .registrations-new__wrapper__form__set__email
               メールアドレス
               %span.form-require 必須
               %br/
@@ -22,7 +24,7 @@
               %span.form-require 必須
               %br/
               = f.password_field :password, placeholder: ' 7文字以上の半角英数字' 
-              .registrations-new__wrapper__form__set__password__desc
+              .registrations-new__wrapper__form__set__attention
                 ※ 英字と数字の両方を含めて設定してください
             .registrations-new__wrapper__form__set__passwordconfirmation
               確認用パスワード
@@ -53,7 +55,7 @@
               生年月日
               %span.profile-group__require 必須
               %br
-              = f.date_select :birth_date, { use_month_numbers:true, prompt:"--", end_year:1900 }
+              = f.date_select :birthday, { use_month_numbers:true, prompt:"--", end_year:1900 }
             .profile-group__sub
               ※本人情報は正しく入力してください。
               %br
