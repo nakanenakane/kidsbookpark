@@ -1,0 +1,26 @@
+.mypage-sidebar
+  %ul.mypage-sidebar__topics
+    .mypage-sidebar__tittle マイページ
+    = link_to "#", class: "mypage-sidebar__topic--btn" do
+      %li.mypage-sidebar__topic
+        出品する
+    = link_to  "#", class: "mypage-sidebar__topic--btn" do
+      %li.mypage-sidebar__topic
+        出品した商品
+    = link_to "#", class: "mypage-sidebar__topic--btn" do
+      %li.mypage-sidebar__topic
+        購入した商品
+  %ul.mypage-sidebar__topics
+    .mypage-sidebar__tittle 設定・ヘルプ
+    = link_to "#", class: "mypage-sidebar__topic--btn" do
+      %li.mypage-sidebar__topic
+        クレジットカード登録
+    = link_to "#", class: "mypage-sidebar__topic--btn" do
+      %li.mypage-sidebar__topic
+        支払い方法
+    = link_to "#", class: "mypage-sidebar__topic--btn" do
+      %li.mypage-sidebar__topic
+        お問い合わせ
+    = link_to destroy_user_session_path, class: "mypage-sidebar__topic--btn" do
+      %li.mypage-sidebar__topic
+        ログアウト
