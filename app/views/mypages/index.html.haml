@@ -1,15 +1,17 @@
 .mypage-main
   .mypage-wrapper
     = render "side_bar"
-    .mypage-contents  
+    .mypage-contents
       .mypage-contents__user
+        .mypage-contents__user--icon
         .mypage-contents__user--name
-          %h1="#{current_user.nickname}さん"
-        .mypage-contents__user--evaluations
-          %p.evaluation
-          %p.evaluation
-        //= image_tag 'mypage-top.png', class: 'top-image'
-      .mypage-contents__wrapper
-        %ul.mypage-contents__wrapper--topics
-          %li.mypage-contents__wrapper--topic
-          %li.mypage-contents__wrapper--topic
+          ="#{current_user.nickname}さん"
+        .mypage-contents__user--listing
+          出品数
+          .mypage-contents__user--evaluations
+            %p.evaluation
+            %p.evaluation
+          //= image_tag 'mypage-top.png', class: 'top-image'
+      .mypage-listing_icon 
+        = link_to "#" do
+          = render 'sellbook-icon'
