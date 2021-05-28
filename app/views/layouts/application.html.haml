@@ -31,9 +31,15 @@
     .header__search
       .header__search__nav
         .header__search__nav--category
-          カテゴリー
+          .header__search__nav--category__icon
+            = icon('fas', 'list-ul',class: "header__search__nav__btn--icon")
+          .header__search__nav--category__moji
+            カテゴリー
         .header__search__nav--publisher
-          出版社
+          .header__search__nav--publisher__icon
+            = icon('far', 'building',class: "header__search__nav__btn--icon")
+          .header__search__nav--publisher__moji
+            出版社
       .header__search__searchbox
         = form_with(local: true) do |form|
           = form.text_field :name, placeholder: "キーワードから探す"
