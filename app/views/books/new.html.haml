@@ -1,0 +1,96 @@
+.listing-main
+  .listing-containar
+    .listing-body
+      = form_with model: @book, local: true do |form|
+        .listing-image{data:{index: "0"}}
+          = render 'layouts/error_messages', model: @book
+          %label.listing-image__tittle 出品画像
+          %label.Mandatory 必須
+          %br
+          .listing-image__sub-tittle 最大4枚までアップロードできます
+          %br
+          .input-area
+            %i.fas.fa-camera
+            %br
+            .listing-introduct
+              ドラックアンドドロップ
+              %br
+              またはクリックしてファイルをアップロード
+          = form.fields_for :item_images do |i|
+            = i.file_field :image, type: 'file', name: "item[item_images_attributes][#{i.index}][image]", data:{index: i.index} , value:"", style: "display:none", class: 'js-file'
+            - if i.object.persisted?
+              = i.check_box :_destroy, data: {index: i.index}, class: 'hidden-destroy'
+            - if i.object.persisted?
+              #js_img.js-img{data:{index: i.index}}
+                = image_tag i.object.image.url, size: '100x100'
+                .js-control
+                  .js-edit
+                    編集
+                  .js-remove
+                    削除
+        .listing-book
+          %label.listing-book__tittle 商品名
+          %label.Mandatory 必須
+          %br
+          = form.text_field :name , class: "listing-book__tittle--area", placeholder: "  40文字まで" ,maxlength: "40"
+          %br
+          %label.listing-book__introduct 商品の説明
+          %label.Mandatory 必須
+          %br
+          = form.text_area :introduction, class: "listing-book__tittle--space", placeholder: " 商品の説明\n(必須 1000文字以内)\n\n(色、素材、重さ、定価、注意点など)\n\n  例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,maxlength: "40"
+          %br
+        .listing-show
+          %label.listing-show__category  カテゴリー
+          %label.Mandatory 必須
+          %br
+          .listing-show__area
+            = form.collection_select :category_id, @parents, :id, :name, { include_blank: "選択してください" }, { class: "listing-show__area--category category_field" }
+            .category_field_c
+            .category_field_gc
+          %label.listing-show__brand 作者
+          %label.Mandatory 必須
+          %br
+          = form.text_field :author, class: "listing-show__brand--area", placeholder: "  例) 絵本太郎"
+          %br
+          %label.listing-show__size  出版社
+          %label.Any 任意
+          %br
+          .listing-show__area
+            = form.collection_select :publisher_id, Publisher.all, :id, :publisher, { include_blank: "選択してください" }, { class: "listing-show__area--category" }
+          %label.listing-show__condition  商品の状態
+          %label.Mandatory 必須
+          %br
+          .listing-show__area
+            = form.collection_select :condition_id, Condition.all, :id, :condition, { include_blank: "選択してください" }, { class: "listing-show__area--category" }
+          %br
+        .listing-delivery                    
+          .listing-delivery__show 配送について
+          %br
+          %label.listing-delivery__burden 配送料の負担
+          %label.Mandatory 必須
+          %br
+          .listing-delivery__area
+            = form.collection_select :postage_payer_id, PostagePayer.all, :id, :postage_payer, { include_blank: "選択してください" }, { class: "listing-delivery__area--category" }
+          %label.listing-delivery__prefectures 発送元の地域
+          %label.Mandatory 必須
+          %br
+          .listing-delivery__area
+            = form.collection_select :prefecture_id, Prefecture.all, :id, :prefecture, { include_blank: "選択してください" }, { class: "listing-delivery__area--category" }
+          %label.listing-delivery__day 発送までの日数
+          %label.Mandatory 必須
+          %br
+          .listing-delivery__area
+            = form.collection_select :preparation_day_id, PreparationDay.all, :id, :preparation_day, { include_blank: "選択してください" }, { class: "listing-delivery__area--category" }
+        .listing-price
+          .listing-price__description 価格(¥100〜9,9999,999)
+          %br
+          .listing-price__show
+            .listing-price__show--notation
+              %label 販売価格
+              %label.Mandatory 必須
+              %span.enn ¥
+            = form.text_field :price , class: "listing-price__show--area" ,placeholder: "0    "
+            %br
+          .listing-price__fee 販売手数料 (5%)
+        .Listing-form
+          = form.submit "出品する", class: "listing_submit"

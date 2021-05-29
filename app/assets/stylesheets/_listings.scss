@@ -1,0 +1,259 @@
+.listing-main{
+  background-color:#e5f2ff;
+}
+
+.listing-containar{
+  text-align: left;
+  width: 550px;
+  padding: 40px;
+  margin: auto;
+  font-size: 20px;
+}
+.header-icon{
+  width: 200px;
+  margin-top: 30px;
+}
+.listing-body{
+  padding: 40px;
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 1%;
+  background-color: #fff;
+}
+.listing-image{
+  padding-bottom: 20px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(191, 186, 186);
+  &__title{
+    height: 5%;
+    width: 60%;
+    background-color: blueviolet;
+  }
+  &__sub-tittle{
+    color: rgb(63, 62, 62);
+    font-weight: 100;
+    font-size: 14px;
+  }
+}
+.input-area{
+  width: 270px;
+  height: 180px;
+  background-color: rgb(235, 232, 232);
+  border-radius: 5px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+
+}
+.input-area:hover{
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
+}
+.fa-camera {
+  text-align: center;
+  margin-top: 30px;
+  position: absolute;
+  top: 25px;
+  right: 130px
+}
+.listing-introduct{
+  font-size: 12px;
+  color: rgb(63, 62, 62);
+  font-weight: 100;
+  position: absolute;
+  top: 95px;
+  right: 20px;
+  text-align: center;
+}
+
+//jsでのカテゴリー機能発火時の子要素、孫要素
+.child_category_id{
+  width: 270px;
+  height: 40px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.gc_category_id{
+  width: 270px;
+  height: 40px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.fa-angle-down{
+  margin-right: 250px;
+}
+
+.listing-book{
+  padding-left: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(155, 154, 154);
+  &__tittle{
+    height: 90px;
+    width: 50%;
+    text-align: center;
+    background-color: aqua;
+    &--area{
+      width: 270px;
+      height: 40px;
+      border-radius: 5px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    &--space{
+      border-radius: 5px;
+      width: 400px;
+      height: 150px;
+      border-radius: 5px;
+      font-size: 17px;
+    }
+  }
+}
+.listing-show{
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(155, 154, 154);
+  padding-left: 20px;
+  &__area{
+    &--category{
+      width: 270px;
+      height: 40px;
+      border-radius: 5px;
+    }
+  }
+  &__brand{
+    &--area{
+      width: 270px;
+      height: 40px;
+      border-radius: 5px;
+    }
+  }
+}
+.listing-delivery{
+  padding-left: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(155, 154, 154);
+  &__show{
+    color: rgb(63, 62, 62);
+    font-weight: 400;
+    font-size: 18px;
+  }
+  &__area{
+    &--category{
+      width: 270px;
+      height: 40px;
+      border-radius: 5px;
+    }
+  }
+}
+.listing-price{
+  padding-left: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(155, 154, 154);
+  &__description{
+    color: rgb(63, 62, 62);
+    font-weight: 100;
+    font-size: 14px;
+  }
+  &__show{
+    display: flex;
+    align-items: center;
+    &--notation{
+      width: 65%;
+      display: flex;
+      align-items: center;
+      margin-right: 15px;
+    }
+    &--area{
+      width: 35%;
+      height: 40px;
+      border-radius: 5px;
+      margin-left: auto;
+      margin-right: 35px;
+      text-align: right;
+    }
+    &--area::placeholder {
+      text-align: right;
+    }
+    .enn{
+      font-weight: 80;
+      font-size: 25px;
+      margin-left: auto;
+    }
+  }
+  
+  &__fee{
+    color: rgb(63, 62, 62);
+    font-weight: 100;
+    margin-top: 10px;
+  }
+}
+.listing_submit{
+  border-radius: 5px;
+  display: block;
+  width: 50%;
+  height: 40px;
+  margin: 20px auto;
+  color: #fff;
+  background-color: #3ccace;
+  border: 1px solid #949494;
+  cursor: pointer;
+
+}
+.listing_submit:hover{
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
+}
+.draft_submit{
+  border-radius: 5px;
+  display: block;
+  width: 50%;
+  height: 40px;
+  margin: 20px auto;
+  color: #fff;
+  background-color: gray;
+  border: 1px solid #949494;
+  cursor: pointer;
+
+}
+.draft_submit:hover{
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
+}
+.Mandatory{
+  background-color: #FF0000;
+  border-radius: 2px;
+  color: #fff;
+  padding: 2px 4px;
+  margin-left: 20px;
+  font-size: 12px;
+  width: 40px;
+}
+.Any{
+  background-color: #3ccace;
+  border-radius: 3px;
+  color: #fff;
+  padding: 2px 4px;
+  margin-left: 20px;
+  font-size: 12px;
+  width: 40px;
+}
+.js-control{
+  display: flex;
+  justify-content: space-between;
+}
+.js-edit{
+  margin: 0 0 0 100px;
+}
+.js-edit:hover{
+  color: #3ccace;
+}
+.js-remove{
+  margin: 0 100px 0 0;
+}
+.js-remove:hover{
+  color: #3ccace;
+}
+.js-file_group{
+  height: 0px;
+}
