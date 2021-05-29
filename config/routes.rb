@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     get  'users/addresses', to: 'users/registrations#new_address'
     post 'users/addresses', to: 'users/registrations#create_address'
   end
-  resources :mypages, only: [:index, :show]
+  resources :mypages, only: [:index, :show, :edit]
+  resources :books, only: [:index, :show, :new, :create, :edit, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'front#index'
 end
