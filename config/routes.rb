@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     post 'users/addresses', to: 'users/registrations#create_address'
   end
   resources :mypages, only: [:index, :show, :edit]
-  resources :books, only: [:index, :show, :new, :create, :edit, :destroy]
+  resources :books, only: [:index, :show, :new, :create, :edit, :destroy] do
+    collection do
+      get 'sell'
+    end
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'front#index'
 end
