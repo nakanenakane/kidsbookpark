@@ -8,10 +8,17 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
+    @book.item_images.new
   end
+
+  private
 
   def set_parents
     @parents = Category.where(ancestry: nil)
+  end
+
+  def book_params
+    params.require(:book).permit(:name, :price, :introduction, :category_id, :publisher_id, :author, :condition_id, :preparation_day_id, :postage_payer_id, :prefecture_id, item_images_attributes: [:image, :id, :_destroy]).merge(user_id: current_user.id)
   end
 
 end
