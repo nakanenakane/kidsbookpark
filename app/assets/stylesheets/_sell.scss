@@ -36,17 +36,105 @@
       font-size: 14px;
       color: #3f3e3e;
     }
+    .input-area{
+      width: 270px;
+      height: 180px;
+      background-color: rgb(235, 232, 232);
+      border-radius: 5px;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      cursor: pointer;
+    }
+    .input-area:hover{
+      box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
+    }
+    .fa-camera {
+      text-align: center;
+      margin-top: 30px;
+      position: absolute;
+      top: 25px;
+      right: 130px
+    }
+    .picture-introduct{
+      font-size: 12px;
+      color: rgb(63, 62, 62);
+      font-weight: 100;
+      position: absolute;
+      top: 95px;
+      right: 20px;
+      text-align: center;
+    }
+  }
+  .sell-book{
+    padding-left: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    &__main{
+      display: flex;
+      justify-content: center;
+    }
+    &__area{
+      width: 270px;
+      height: 40px;
+      border-radius: 5px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    &__introduct{
+      height: 300px;
+      width: 444px;
+      padding-top: 5px;
+      border: 2px solid;
+      border-radius: 5px;
+      border-color: rgb(25, 31, 43);
+      font-size: 15px;
+    }
+    .sell-book--introduct{
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .sell-show{
+    padding-left: 20px;
+    padding-bottom: 5%;
+    border-bottom: 1px solid rgb(155, 154, 154);
+    font-size: 18px;
+    &__category{
+      display: flex;
+      justify-content: center;
+    }
+    &__area{
+      width: 270px;
+      height: 40px;
+      border-radius: 5px;
+      }
+    &__author{
+      display: flex;
+      justify-content: center;
+    }
+    &__publisher{
+      display: flex;
+      justify-content: center;
+      margin-top: 2%;
+    }
+    &__condition{
+      display: flex;
+      justify-content: center;
+      margin-top: 7%;
+    }
   }
 }
+
 .sell-title{
-  height: 5%;
-  width: 60%;
+  width: 21%;
   font-size: 18px;
 }
 .mandatory{
   height: 13px;
   width: 30px;
-  margin-top: 1.5%;
+  margin-top: 1.1%;
   margin-left: 2%;
   padding-bottom: 6px;
   text-align: center;
@@ -55,35 +143,17 @@
   color: #fff;
   background-color: #FF0000;
 }
-.input-area{
-  width: 270px;
-  height: 180px;
-  background-color: rgb(235, 232, 232);
-  border-radius: 5px;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  cursor: pointer;
-
-}
-.input-area:hover{
-  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
-}
-.fa-camera {
+.any{
+  height: 13px;
+  width: 30px;
+  margin-top: 1.1%;
+  margin-left: 2%;
+  padding-bottom: 6px;
   text-align: center;
-  margin-top: 30px;
-  position: absolute;
-  top: 25px;
-  right: 130px
-}
-.sell-introduct{
-  font-size: 12px;
-  color: rgb(63, 62, 62);
-  font-weight: 100;
-  position: absolute;
-  top: 95px;
-  right: 20px;
-  text-align: center;
+  font-size: 11px;
+  border-radius: 2px;
+  color: #fff;
+  background-color: #3ccace;
 }
 
 //jsでのカテゴリー機能発火時の子要素、孫要素
@@ -103,128 +173,108 @@
   margin-right: 250px;
 }
 
-.sell-book{
-  padding-left: 20px;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
 
-  font-size: 18px;
-  &__main{
-    display: flex;
-    justify-content: center;
-    height: 90px;
-    width: 50%;
-    text-align: center;
-    background-color: aqua;
-  }
-  &__area{
-    width: 270px;
-    height: 40px;
-    border-radius: 5px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  &__introduct{
-    height: 300px;
-    width: 444px;
-    padding-top: 5px;
-    border: 2px solid;
-    border-radius: 5px;
-    border-color: rgb(25, 31, 43);
-  }
-}
-.sell-show{
-  margin-bottom: 10px;
-  border-bottom: 1px solid rgb(155, 154, 154);
-  padding-left: 20px;
-  font-size: 18px;
-  &__area{
-    &--category{
-      width: 270px;
-      height: 40px;
-      border-radius: 5px;
-    }
-  }
-  &__brand{
-    &--area{
-      width: 270px;
-      height: 40px;
-      border-radius: 5px;
-    }
-  }
-}
+
 .sell-delivery{
+  margin-top: 5%;
+  margin-bottom: 10px;
   padding-left: 20px;
   padding-bottom: 20px;
-  margin-bottom: 10px;
   border-bottom: 1px solid rgb(155, 154, 154);
-  &__show{
-    color: rgb(63, 62, 62);
-    font-weight: 400;
+  &__title{
+    height: 5%;
+    width: 30%;
     font-size: 18px;
+    color: #3f3e3e;
+    margin-left: 34%;
+    border: 1px solid rgb(80, 80, 83);
+    border-radius: 4px;
+    background-color: rgb(255, 230, 7);
   }
-  &__area{
-    &--category{
-      width: 270px;
-      height: 40px;
-      border-radius: 5px;
-    }
+  &__shipping{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+  }
+  &__prefectures{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+  }
+  &__day{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
   }
 }
+
+.delivery-title{
+  width: 25%;
+  font-size: 18px;
+}
+.delivery-day{
+  width: 28.5%;
+  font-size: 18px;
+}
+
 .sell-price{
   padding-left: 20px;
   margin-bottom: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgb(155, 154, 154);
+  &__show{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 1%;
+  }
   &__description{
+    display: flex;
+    justify-content: center;
+    padding-left: 100px;
     color: rgb(63, 62, 62);
     font-weight: 100;
     font-size: 14px;
-  }
-  &__show{
-    display: flex;
-    align-items: center;
-    &--notation{
-      width: 65%;
+    &__money{
       display: flex;
-      align-items: center;
-      margin-right: 15px;
-    }
-    &--area{
-      width: 35%;
-      height: 40px;
-      border-radius: 5px;
-      margin-left: auto;
-      margin-right: 35px;
-      text-align: right;
-    }
-    &--area::placeholder {
-      text-align: right;
-    }
-    .enn{
-      font-weight: 80;
-      font-size: 25px;
-      margin-left: auto;
+      justify-content: space-around;
     }
   }
-  
+  &__area{
+    height: 40px;
+    width: 50%;
+    border-radius: 5px;
+    text-align: right;
+  }
+  &__area::placeholder {
+    text-align: right;
+  }
   &__fee{
     color: rgb(63, 62, 62);
     font-weight: 100;
     margin-top: 10px;
+    font-size: 15px;
   }
 }
+.price-title{
+  width: 17%;
+  font-size: 18px;
+}
+.yen{
+  font-weight: 80;
+  font-size: 29px;
+  margin-left: 50px;
+}
 .sell_submit{
-  border-radius: 5px;
   display: block;
-  width: 50%;
-  height: 40px;
-  margin: 20px auto;
+  height: 55px;
+  width: 55%;
+  border-radius: 5px;
+  margin: 10% auto;
   color: #fff;
-  background-color: #3ccace;
   border: 1px solid #949494;
   cursor: pointer;
-
+  background-color: #3ccace;
 }
 .sell_submit:hover{
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
@@ -244,24 +294,7 @@
 .draft_submit:hover{
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
 }
-.Mandatory{
-  background-color: #FF0000;
-  border-radius: 2px;
-  color: #fff;
-  padding: 2px 4px;
-  margin-left: 20px;
-  font-size: 12px;
-  width: 40px;
-}
-.Any{
-  background-color: #3ccace;
-  border-radius: 3px;
-  color: #fff;
-  padding: 2px 4px;
-  margin-left: 20px;
-  font-size: 12px;
-  width: 40px;
-}
+
 .js-control{
   display: flex;
   justify-content: space-between;

@@ -6,7 +6,7 @@
           = form.fields_for :item_images do |i|
             = i.file_field :image, type: 'file', name: "item[item_images_attributes][#{i.index}][image]", data:{index: i.index} , value:"", style: "display:none", class: 'js-file'
           .sell-image__main
-            .sell-tittle
+            .sell-title
               出品画像
             .mandatory
               必須
@@ -16,74 +16,82 @@
           .input-area
             %i.fas.fa-camera
             %br
-            .sell-introduct
+            .picture-introduct
               ドラックアンドドロップ
               %br
               またはクリックしてファイルをアップロード
         .sell-book
-          .sekk-book__main
-            .sell-tittle タイトル
-            .mandatory 必須
+          .sell-book__main
+            .sell-title
+              タイトル
+            .mandatory
+              必須
           = form.text_field :name , class: "sell-book__area", placeholder: "  40文字まで" ,maxlength: "40"
           %br
-
-        .sell-book--introduct
-          .sell-title 本の説明
-          .mandatory 必須
-          %br
+        .sell-book
+          .sell-book--introduct
+            .sell-title 本の説明
+            .mandatory 必須
           = form.text_area :introduction, class: "sell-book__introduct", placeholder: " 本の説明、概要など記載してください" ,maxlength: "500"
           %br
         .sell-show
-          %label.sell-show__category  カテゴリー
-          %label.Mandatory 必須
+          .sell-show__category
+            .sell-title
+              カテゴリー
+            .mandatory
+              必須
           %br
           .sell-show__area
             //= form.collection_select :category_id, @parents, :id, :name, { include_blank: "選択してください" }, { class: "sell-show__area--category category_field" }
             .category_field_c
             .category_field_gc
-          %label.sell-show__brand 作者
-          %label.Mandatory 必須
-          %br
-          = form.text_field :author, class: "sell-show__brand--area", placeholder: "  例) 絵本太郎"
-          %br
-          %label.sell-show__size  出版社
-          %label.Any 任意
-          %br
-          .sell-show__area
-            = form.collection_select :publisher_id, Publisher.all, :id, :publisher, { include_blank: "選択してください" }, { class: "sell-show__area--category" }
-          %label.sell-show__condition  商品の状態
-          %label.Mandatory 必須
-          %br
-          .sell-show__area
-            = form.collection_select :condition_id, Condition.all, :id, :condition, { include_blank: "選択してください" }, { class: "sell-show__area--category" }
-          %br
+          .sell-show__author
+            .sell-title
+              作 者
+            .mandatory
+              必須
+          = form.text_field :author, class: "sell-book__area", placeholder: "  例) 絵本太郎"
+          .sell-show__publisher 
+            .sell-title
+              出版社
+            .any
+              任意
+          = form.collection_select :publisher_id, Publisher.all, :id, :publisher, { include_blank: "選択してください" }, { class: "sell-show__area" }
+          .sell-show__condition
+            .sell-title
+              商品の状態
+            .mandatory
+              必須
+          = form.collection_select :condition_id, Condition.all, :id, :condition, { include_blank: "選択してください" }, { class: "sell-show__area" }
         .sell-delivery                    
-          .sell-delivery__show 配送について
-          %br
-          %label.sell-delivery__burden 配送料の負担
-          %label.Mandatory 必須
-          %br
-          .sell-delivery__area
-            = form.collection_select :postage_payer_id, PostagePayer.all, :id, :postage_payer, { include_blank: "選択してください" }, { class: "sell-delivery__area--category" }
-          %label.sell-delivery__prefectures 発送元の地域
-          %label.Mandatory 必須
-          %br
-          .sell-delivery__area
-            = form.collection_select :prefecture_id, Prefecture.all, :id, :prefecture, { include_blank: "選択してください" }, { class: "sell-delivery__area--category" }
-          %label.sell-delivery__day 発送までの日数
-          %label.Mandatory 必須
-          %br
-          .sell-delivery__area
-            = form.collection_select :preparation_day_id, PreparationDay.all, :id, :preparation_day, { include_blank: "選択してください" }, { class: "sell-delivery__area--category" }
+          .sell-delivery__title
+            配送について
+          .sell-delivery__shipping
+            .delivery-title 配送料の負担
+            .mandatory 必須
+          = form.collection_select :postage_payer_id, PostagePayer.all, :id, :postage_payer, { include_blank: "選択してください" }, { class: "sell-show__area" }
+          .sell-delivery__prefectures
+            .delivery-title
+              発送元の地域
+            .mandatory
+              必須
+          = form.collection_select :prefecture_id, Prefecture.all, :id, :prefecture, { include_blank: "選択してください" }, { class: "sell-show__area" }
+          .sell-delivery__day
+            .delivery-day
+              発送までの日数
+            .mandatory
+              必須
+          = form.collection_select :preparation_day_id, PreparationDay.all, :id, :preparation_day, { include_blank: "選択してください" }, { class: "sell-show__area" }
         .sell-price
-          .sell-price__description 価格(¥100〜9,9999,999)
-          %br
           .sell-price__show
-            .sell-price__show--notation
-              %label 販売価格
-              %label.Mandatory 必須
-              %span.enn ¥
-            = form.text_field :price , class: "sell-price__show--area" ,placeholder: "0    "
+            .price-title 販売価格
+            .mandatory 必須
+          .sell-price__description
+            価格(¥100〜9,9999,999)
+          .sell-price__description__money
+            .yen
+              ¥
+            = form.text_field :price , class: "sell-price__area" ,placeholder: "  0  "
             %br
           .sell-price__fee 販売手数料 (5%)
         .sell-form
