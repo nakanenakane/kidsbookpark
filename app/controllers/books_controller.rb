@@ -11,6 +11,13 @@ class BooksController < ApplicationController
     @book.item_images.new
   end
 
+  def show_children
+    @children = Category.find(params[:category]).children
+    respond_to do |format|
+      format.json
+    end
+  end
+
   private
 
   def set_parents
