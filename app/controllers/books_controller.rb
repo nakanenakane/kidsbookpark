@@ -11,17 +11,18 @@ class BooksController < ApplicationController
     @book.item_images.new
   end
 
-  def show_children
-    @children = Category.find(params[:category]).children
-    respond_to do |format|
-      format.json
-    end
+  def search
+   @children = Category.find(params[:parent_id]).children
   end
 
   private
 
   def set_parents
     @parents = Category.where(ancestry: nil)
+  end
+
+  def set_group
+    @book = Book.find(params[:id])
   end
 
   def book_params
