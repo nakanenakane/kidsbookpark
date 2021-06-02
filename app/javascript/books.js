@@ -3,7 +3,7 @@ $(function(){
   function build_childSelect() {
     let child_select = `<i class="fas fa-angle-down"></i>
                         <br>
-                        <select name="item[category_id]" class="child_category_id">
+                        <select name="book[category_id]" class="child_category_id">
                           <option value="">---</option>
                         </select>
                         `
@@ -16,16 +16,6 @@ $(function(){
     return option_html;
   }
 
-  // 孫のselectタグを追加
-  function build_gcSelect() {
-    let gc_select = `<i class="fas fa-angle-down"></i>
-                     <br>
-                     <select name="item[category_id]" class="gc_category_id">
-                       <option value="">---</option>
-                     </select>`
-    return gc_select;
-  }
-
   $(".category_field").change(function () {
     // 選択した親の値を取得する
     let parentValue = $(".category_field").val(); 
@@ -34,7 +24,7 @@ $(function(){
     // 初期値("---")以外を選択したらajaxを開始
     if (parentValue.length != 0) {
       $.ajax({
-        url: '/items/search',
+        url: '/books/search',
         type: 'GET',
         // itemsコントローラーにparamsをparent_idで送る
         data: { parent_id: parentValue },
@@ -45,7 +35,6 @@ $(function(){
 
           // selectタグを生成してビューにappendする
           $(".category_field_c").empty().append(child_select);
-          $(".category_field_gc").empty();
           // jbuilderから取得したデータを1件ずつoptionタグにappendする
           data.forEach(function (d) {
             let option_html = build_Option(d)
@@ -73,7 +62,6 @@ $(function(){
           // selectタグを生成してビューにappendする
           let gc_select = build_gcSelect
           console.log(gc_select);
-          $(".category_field_gc").empty().append(gc_select);
           // jbuilderから取得したデータを1件ずつoptionタグにappendする
           gc_data.forEach(function (gc_d) {
             let option_html = build_Option(gc_d);
