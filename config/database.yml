@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: kidsbookpark_production
-  username: kidsbookpark
+  username: root
   password: <%= ENV['KIDSBOOKPARK_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
