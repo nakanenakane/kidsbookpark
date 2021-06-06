@@ -1,0 +1,57 @@
+.show-body
+  = render 'front/sellbook-icon'
+  .show-body__main
+    .show-body__main__content
+      .show-item
+        .show-item__name
+
+        .show-item__images
+          .show-item__images__main
+
+          .show-item__images__sub
+
+            
+        .show-item__price
+ 
+        .show-item__send-tax
+          (税込)送料込み
+        .show-item__detail
+
+        /= render  partial: "show-itembox"
+        %h1.purchase
+          購入
+    .option
+      = link_to "#", class:"likes_btn" do
+        .likes-btn
+          ★ お気に入り 1
+      = link_to "#" do
+        .report-btn
+          不適切な商品の通報
+    .show-item-comment
+      = form_with(model:@user, local: true) do |f|  
+        = f.text_area :text, rows: "2", class: "textbox"
+        .caution-box
+          相手のことを考え丁寧なコメントを心がけましょう。
+          %p 不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        = f.submit "コメントする", class: "form__submit"
+    .link
+      =link_to "< 前の商品","#", class:"link-text"
+      =link_to "後ろの商品 >", "#", class:"link-text"
+    .related-item
+      =link_to "#", class:"related-item-title" do
+        .related-item__title
+          食品
+        = link_to "#" do
+          .related-item__image
+            /= image_tag "image_2.jpg", class:"item-image"
+            .related-item__image__box
+              .related-item__image__box__title
+                テキスト
+              .related-item__image__box__text
+                %ul 
+                  %li
+                    1,000円
+                    %li
+                      ★ 1
+              .related-item__image__box__tax
+                (税込)

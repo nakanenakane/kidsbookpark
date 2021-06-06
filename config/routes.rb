@@ -9,9 +9,10 @@ Rails.application.routes.draw do
     post 'users/addresses', to: 'users/registrations#create_address'
   end
   resources :mypages, only: [:index, :show, :edit]
-  resources :books do
+  resources :books, only: [:index, :show, :new, :create, :edit, :destroy]do
     resources :comments,  only: [:create, :destroy]
     collection do
+      get 'show', to: 'book/show'
       get 'sell'
       get 'get_category_children', defaults: { fomat: 'json'}
     end
