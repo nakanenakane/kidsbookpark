@@ -3,8 +3,6 @@
     .sell-body
       = form_with model: @book, local: true do |form|
         .sell-image{data:{index: "0"}}
-          = form.fields_for :item_images do |i|
-            = i.file_field :image, type: 'file', name: "item[item_images_attributes][#{i.index}][image]", data:{index: i.index} , value:"", style: "display:none", class: 'js-file'
           .sell-image__main
             .sell-title
               出品画像
@@ -20,6 +18,8 @@
               ドラックアンドドロップ
               %br
               またはクリックしてファイルをアップロード
+            = form.fields_for :item_images do |i|
+              = i.file_field :src
         .sell-book
           .sell-book__main
             .sell-title
@@ -42,9 +42,8 @@
               必須
           %br
           .sell-show__area
-            //= form.collection_select :category_id, @parents, :id, :name, { include_blank: "選択してください" }, { class: "sell-show__area--category category_field" }
+            = form.collection_select :category_id, @parents, :id, :name, { include_blank: "選択してください" }, { class: "sell-show__category" }
             .category_field_c
-            .category_field_gc
           .sell-show__author
             .sell-title
               作 者
