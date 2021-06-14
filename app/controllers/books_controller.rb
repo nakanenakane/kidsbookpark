@@ -17,11 +17,14 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      redirect_to root_path
+      redirect_to confirmation_books_path(current_user)
     else
       @book.item_images.new
       render :new
     end
+  end
+
+  def edit
   end
 
 
@@ -40,7 +43,7 @@ class BooksController < ApplicationController
   # end
 
   def book_params
-    params.require(:book).permit(:name, :price, :introduction, :category_id, :publisher_id, :author, :condition_id, :preparation_day_id, :postage_payer_id, :prefecture_id, item_images_attributes: [:image, :id, :_destroy]).merge(user_id: current_user.id)
+    params.require(:book).permit(:name, :price, :introduction, :category_id, :publisher_id, :author, :condition_id, :preparation_day_id, :postage_payer_id, :prefecture_id, item_images_attributes: [:image, :id, ]).merge(user_id: current_user.id)
   end
 
 end
