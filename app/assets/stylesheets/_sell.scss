@@ -104,6 +104,12 @@
     &__category{
       display: flex;
       justify-content: center;
+      &__area{
+        width: 270px;
+        height: 40px;
+        border-radius: 5px;
+        background-color: aqua;
+      }
     }
     &__area{
       width: 270px;
