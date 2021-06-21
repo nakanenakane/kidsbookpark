@@ -12,11 +12,11 @@ Rails.application.routes.draw do
   resources :books, only: [:index, :show, :new, :create, :edit, :destroy]do
     resources :comments,  only: [:create, :destroy]
     collection do
-
       get 'sell'
       post 'sell', to: 'books#create'
       get 'confirmation', to: 'books#confirmation'
       get 'get_category_children', defaults: { fomat: 'json'}
+      get 'update', to: 'books#update'
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
