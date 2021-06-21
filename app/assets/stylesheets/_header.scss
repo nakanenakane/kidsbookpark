@@ -33,7 +33,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-left: 20px;
+        padding-left: 7px;
           &--mypage{
             height: 32px;
             width: 100px;
@@ -44,6 +44,18 @@
             background: #fa4141;
             color: #fff;
             padding: 5px 8px;
+          }
+        &--logout{
+          height: 32px;
+          width: 100px;
+          margin-left: 20px;
+          padding: 5px 8px;
+          text-align: center;
+          font-size: 14px;
+          border-radius: 4px;
+          box-sizing: border-box;
+          color: #fff;
+          background: #3565eb;
         }
         &--login{
           width: 58px;

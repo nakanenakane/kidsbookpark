@@ -6,7 +6,7 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application'
   %body
   .header
     .header__main
@@ -21,6 +21,9 @@
             =link_to mypages_path(current_user) do
               .header__main__nav__list--mypage
                 マイページ
+            =link_to destroy_user_session_path do
+              .header__main__nav__list--logout
+                ログアウト
           -else
             =link_to new_user_session_path(current_user), class: "header__main__nav__list--login" do
               .header__main__nav__list--login
