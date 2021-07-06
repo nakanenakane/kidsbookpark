@@ -12,7 +12,7 @@
     = link_to "#", class: "mypage-sidebar__topic--btn" do
       %li.mypage-sidebar__topic
         ユーザー情報
-    = link_to "#", class: "mypage-sidebar__topic--btn" do
+    = link_to edit_address_mypage_path(current_user), class: "mypage-sidebar__topic--btn" do
       %li.mypage-sidebar__topic
         発送元・お届け先住所
     = link_to "#", class: "mypage-sidebar__topic--btn" do

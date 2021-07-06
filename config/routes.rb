@@ -8,15 +8,17 @@ Rails.application.routes.draw do
     get  'users/addresses', to: 'users/registrations#new_address'
     post 'users/addresses', to: 'users/registrations#create_address'
   end
-  resources :mypages, only: [:index, :show, :edit]
+
+  resources :mypages, only: [:index, :show, :edit]do
+   member do
+     get 'edit_address', to: 'mypages#edit_address'
+   end
+  end
   resources :books, only: [:index, :show, :new, :create, :edit, :destroy]do
     resources :comments,  only: [:create, :destroy]
     collection do
-      get 'sell'
-      post 'sell', to: 'books#create'
       get 'confirmation', to: 'books#confirmation'
       get 'get_category_children', defaults: { fomat: 'json'}
-      get 'update', to: 'books#update'
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
