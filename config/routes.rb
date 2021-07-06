@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :mypages, only: [:index, :show, :edit]do
    member do
-     get 'edit_address', to: 'mypages#edit_address'
+     get 'address', to: 'mypages#my_address'
    end
   end
   resources :books, only: [:index, :show, :new, :create, :edit, :destroy]do

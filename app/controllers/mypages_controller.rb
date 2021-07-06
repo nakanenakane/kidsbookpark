@@ -6,7 +6,7 @@ class MypagesController < ApplicationController
   def show
   end
 
-  def edit_address
+  def my_address
   end
 
   def update
