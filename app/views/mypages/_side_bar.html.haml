@@ -11,13 +11,16 @@
     .mypage-sidebar__tittle 設定
     = link_to "#", class: "mypage-sidebar__topic--btn" do
       %li.mypage-sidebar__topic
-        ユーザー情報
+        プロフィール
+    = link_to edit_user_registration_path, class: "mypage-sidebar__topic--btn" do
+      %li.mypage-sidebar__topic
+        メール/パスワード
     = link_to address_mypage_path(current_user), class: "mypage-sidebar__topic--btn" do
       %li.mypage-sidebar__topic
         発送元・お届け先住所
     = link_to "#", class: "mypage-sidebar__topic--btn" do
       %li.mypage-sidebar__topic
-        支払方法
+        支 払 方 法
     = link_to "#", class: "mypage-sidebar__topic--btn" do
       %li.mypage-sidebar__topic
         クレジットカード登録
