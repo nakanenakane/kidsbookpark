@@ -21,7 +21,7 @@
     = link_to "#", class: "mypage-sidebar__topic--btn" do
       %li.mypage-sidebar__topic
         支 払 方 法
-    = link_to "#", class: "mypage-sidebar__topic--btn" do
+    = link_to new_creditcard_path(current_user), class: "mypage-sidebar__topic--btn" do
       %li.mypage-sidebar__topic
         クレジットカード登録
     = link_to destroy_user_session_path, class: "mypage-sidebar__topic--btn" do

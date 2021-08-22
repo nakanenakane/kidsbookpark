@@ -1,0 +1,20 @@
+.mypage-main
+  .mypage-wrapper
+    = render "shared/side_bar"
+    .cards-show
+      .credit-heading
+        登録クレジットカード情報
+      .cards-show__body
+        .cards-show__body__main
+          .cards-show-index
+          = image_tag "logo/#{@card_src}", alt: @card_brand, id: "card-image"
+          .cards-show__body__main__card-number
+            = "**** **** **** " + @default_card_information.last4
+          .cards-show__body__main__expiration-date
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
+        .cards-show__body__delete
+        = form_tag(delete_card_index_path, method: :post, data: { confirm: "【確認】クレジットカード情報を削除してよろしいですか？" }, name: "inputForm") do
+          %input{ type: "hidden", value: ""}
+          %button{type: "submit", id: 'card-delete'} 削除する
