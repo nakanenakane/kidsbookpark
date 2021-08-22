@@ -1,6 +1,6 @@
 class CreditcardController < ApplicationController
 end
-class CardController < ApplicationController
+class CreditcardController < ApplicationController
 
   require "payjp"
   before_action :set_card
