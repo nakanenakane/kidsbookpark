@@ -1,0 +1,48 @@
+.useredit{
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  margin:70px 40px 50px 40px;
+  background-color: #fff;
+  &__title{
+    height: 45px;
+    width: 100%;
+    padding-top: 10px;
+    text-align: center;
+    border-bottom: 1px solid rgb(235, 230, 230);
+    font-size: 20px;
+    background-color: #ffc489;
+  }
+  &__main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .field{
+      font-weight: 700;
+      margin-top: 10%;
+      margin-bottom: 3%;
+    }
+  }
+}
+
+.editfield{
+  height: 40px;
+  width: 270px;
+  padding: 5px 8px;
+  border-radius: 3px;
+  border: 1px solid #aaa;
+  background-image: none；
+}
+.edit_submit{
+  border-radius: 3px;
+  display: block;
+  width: 85%;
+  height: 40px;
+  margin: 20% auto;
+  color: #fff;
+  background-color: #3ccace;
+}
+.edit_submit:hover {
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
+}
