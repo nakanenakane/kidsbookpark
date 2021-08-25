@@ -30,6 +30,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def update_address
+    @address.update(address_params)
+    redirect_to mypages_path(current_user)
+  end
+
+  def edit_address
+    @address = Address.find(current_user[:id])
+  end
+
+
 private
 
   def address_params

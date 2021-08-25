@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   }
   devise_scope :user do
     get  'users/sign_up', to: 'users/registrations#new'
-    get '/users/sign_out', to: 'devise/sessions#destroy'
+    get  'users/sign_out', to: 'devise/sessions#destroy'
     get  'users/addresses', to: 'users/registrations#new_address'
+    get  'users/edit_addresses', to: 'users/registrations#edit_address'
     post 'users/addresses', to: 'users/registrations#create_address'
   end
 
